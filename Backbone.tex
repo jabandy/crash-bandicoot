@@ -1,0 +1,350 @@
+\documentclass[11pt, rgb]{scrbook}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Paket Theme Konstanz         %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Alle verwendeten Makros und Umgebeungen, die zur Erstellung von
+% PDF-Dokumenten und Abschlussarbeiten benötigt werden, können
+% aus dem Paket themeKonstanz geladen werden, welches sich in der
+% Datei themeKonstanz.sty befindet.
+%
+% Möchte man dieses Dokument mit XeLaTeX anstatt PDFLatex kompilieren,
+% um die Systemschrift Arial zu verwenden, dann muss zusätzlich das
+% Add-On Paket themeKonstanzXelatexAddOn, welches sich in der Datei
+% themeKonstanzXelatexAddOn.sty befindet VOR dem eigentlichen
+% Paket themeKonstanz geladen werden (siehe unten).
+%
+% Möchte man ein Style Add-On verwenden, das aus meiner
+% Bachelorarbeit aus dem Jahr 2015 stammt, so muss NACH dem Laden
+% des Paketes themeKonstanz dieses zusätzliche Paket
+% themeKonstanzStyleAddOn, welches sich in der Datei
+% themeKonstanzStyleAddOn.sty befindet, geladen werden. Dabei 
+% werden die Überschriften der Kapitel, der Abschnitte, der Unter-
+% Abschnitte und des Unterunterabschnittes geändert. Dieses
+% Add-On wird vor allem für Abschlussarbeiten empfohlen, die
+% nicht zu farbig sein sollten und nicht so strikt an das
+% Corporate Design der Universität Konstanz gebunden sind.
+
+%\usepackage{themeKonstanzXelatexAddOn} % XeLaTeX mit Schriftart Arial, VOR dem Standardpaket importieren
+\usepackage{themeKonstanz} % Muss immer verwendet werden (Standardpaket)
+%\usepackage{themeKonstanzStyleAddOn} % Style Add-On für andere Überschriften, NACH dem Standardpaket importieren
+\usepackage[square,sort,comma,numbers]{natbib}
+\usepackage{import}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Papierformat                 %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Mit Hilfe des Makros
+%
+%    \format{<key>}
+%
+% kann das Papierformat angepasst werden.
+%
+% Zur Auswahl stehen folgende Papierformate:
+%
+%   Schlüssel  Beschreibung      Höhe      Breite
+%   -----------------------------------------------
+%   a3         DinA3 Hochformat  42.0  cm  29.7  cm
+%   a3quer     DinA3 Querformat  29.7  cm  42.0  cm
+%   a4         DinA4 Hochformat  29.7  cm  21.0  cm
+%   a4quer     DinA4 Querformat  21.0  cm  29.7  cm
+%   a5         DinA5 Hochformat  21.0  cm  14.8  cm
+%   a5quer     DinA5 Querformat  14.8  cm  21.0  cm
+%
+% Falls keiner der unterstützten Schlüssel übergeben wird,
+% ist DinA4 Hochformat der Standard.
+
+% Wähle hier DinA4 Hochformat mit dem Schlüssel a4 aus.
+
+\format{a4}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Dokumentinformationen        %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Für das Dokument können mit Hilfe der Makros
+%     
+%    \date{...}
+%    \year{...}
+%    \author{...}
+%    \title{...}
+%    \subtitle{...}
+%    \unisection{...}
+%    \department{...}
+%    \supervisorOne{...}
+%    \supervisorTwo{...}
+%
+% das Datum, das Jahr, der Autor / die Autoren, der Titel, der
+% Unteritel des Dokumentes, die Sektion an der Universität,
+% der Fachbereich an der Universität, der Erstgutachter und der
+% Zweitgutachter bestimmt werden.
+%
+% Je nachdem, ob die Corporate Design Titelseite oder die
+% Thesis-Titelseite ausgewählt wird, werden die entsprechenden
+% Angaben dargestellt und verwendet. Außerdem benutzen die 
+% Kopf- und Fusszeile diese Informationen (siehe weiter unten).
+
+\year{2017}
+\author{\\ Dennis Rosskothen}
+\title{Influence of \textit{TG probiotic} as a probiotic feed supplement on rainbow trout (\textit{Oncorhynchus mykiss})}
+\unisection{Biology}
+\department{Biological Siences}
+\supervisorOne{Dr. Jasminca Behrman-Godel}
+\supervisorTwo{Dr. Anselm Rink}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Kopf und Fusszeile           %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Mit Hilfe des Makros
+%
+%    \headFoot
+%
+% kann aus 20 vordefinierten Kopf- und Fusszeilen
+% gewählt werden.
+%
+% Dieses Makro besitzt ein Argument, nämlich die
+% ID aus den 20 vordefinierten Kopf- und Fusszeilen:
+%
+%    \headFoot{<ID>}
+%
+% Bei den IDs 1, 2, 5, 6, 9, 10, 13, 14, 17 und 18 
+% mit | wird auf ungerade und gerade Seite geachtet.
+%
+% Bei den restlichen IDs ist die Kopf- und Fusszeile auf 
+% ungeraden und geraden Seiten gleich.
+%
+% Dies soll vor allem dem Benutzer die Entscheidung
+% überlassen, ob er das Dokument einseitig oder doppelseitig
+% ausdruckt.
+%
+%
+%   ID    Beschreibung
+%   ------------------
+%   1     Kopfzeile: Seite --- Kapitel --- Autor | Autor --- Kapitel --- Seite
+%         Fusszeile:
+%
+%   2     Kopfzeile: 
+%         Fusszeile: Seite --- Kapitel --- Autor | Autor --- Kapitel --- Seite
+%
+%   3     Kopfzeile: Autor --- Kapitel --- Seite
+%         Fusszeile:
+%
+%   4     Kopfzeile: 
+%         Fusszeile: Autor --- Kapitel --- Seite
+%
+%   5     Kopfzeile: Seite --- Autor --- Kapitel | Kapitel --- Autor --- Seite
+%         Fusszeile:
+%
+%   6     Kopfzeile: 
+%         Fusszeile: Seite --- Autor --- Kapitel | Kapitel --- Autor --- Seite
+%
+%   7     Kopfzeile: Kapitel --- Autor --- Seite
+%         Fusszeile:
+%
+%   8     Kopfzeile: 
+%         Fusszeile: Kapitel --- Autor --- Seite
+%
+%   9     Kopfzeile: Seite --- --- Kapitel | Name --- --- Seite
+%         Fusszeile:
+%
+%   10    Kopfzeile: 
+%         Fusszeile: Seite --- --- Kapitel | Name --- --- Seite
+%
+%   11    Kopfzeile: Kapitel --- --- Seite
+%         Fusszeile:
+%
+%   12    Kopfzeile: 
+%         Fusszeile: Kapitel --- --- Seite
+%
+%   13    Kopfzeile: Seite --- --- Autor | Kapitel --- --- Seite
+%         Fusszeile:
+%
+%   14    Kopfzeile:
+%         Fusszeile: Seite --- --- Autor | Kapitel --- --- Seite
+%
+%   15    Kopfzeile: Autor --- --- Seite
+%         Fusszeile:
+%
+%   16    Kopfzeile:
+%         Fusszeile: Autor --- --- Seite
+%
+%   17    Kopfzeile: Seite --- --- | --- --- Seite
+%         Fusszeile:
+%
+%   18    Kopfzeile: 
+%         Fusszeile: Seite --- --- | --- --- Seite
+%
+%   19    Kopfzeile: --- --- Seite
+%         Fusszeile:
+%
+%   20    Kopfzeile: 
+%         Fusszeile: --- --- Seite
+%
+% Weitere individuelle Kopf- und Fusszeilen können in der .sty Datei angepasst werden.
+
+% Wähle die ID 14 mit 
+%    Kopfzeile:
+%    Fusszeile: Seite --- --- Autor | Kapitel --- --- Seite
+
+\headFoot{17}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Begin vom Dokument                                    %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Titelseite                                 %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\thesistitlepage[language=english]{Master Thesis}
+\cleardoublepage
+
+
+
+%_________ frontmatter (und mainmatter) wurden nur via scrBOOK möglich gemacht. frontmatter sind die vorangestellten Seiten die nicht im Inhaltsverzeichnis erscheinen
+\frontmatter
+
+
+\pagenumbering{roman}
+%
+\input{spine/abstract}
+\cleardoublepage
+%
+\input{spine/dedication}
+\cleardoublepage
+%
+\input{spine/declaration}
+\cleardoublepage
+
+
+%_____________ mainmatter macht die Nummerierung wieder von römisch nach normal
+
+\mainmatter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Inhaltsverzeichnis           %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Das Inhaltsverzeichnis kann wie gewohnt mit dem Makro
+%
+    \tableofcontents
+%
+% erstellt werden.
+
+%\tableofcontents
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Abbildungsverzeichnis        %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Das Abbildungsverzeichnis kann wie gewohnt mit dem Makro
+%
+%    \listoffigures
+%
+% erstellt werden.
+%
+% Möchte man das Abbildungsverzeichnis zum Inhaltsverzeichnis
+% hinzufügen, so kann dies mit dem Makro
+% 
+%    \addcontentsline{toc}{chapter}{Abbildungsverzeichnis}
+%
+% hinzugefügt werden.
+
+%\listoffigures
+%\addcontentsline{toc}{chapter}{Abbildungsverzeichnis}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Tabellenverzeichnis          %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Das Tabellenverzeichnis kann wie gewohnt mit dem Makro
+%
+%  \listoftables
+%
+% erstellt werden.
+%
+% Möchte man das Tabellenverzeichnis zum Inhaltsverzeichnis
+% hinzufügen, so kann dies mit dem Makro
+% 
+%    \addcontentsline{toc}{chapter}{Tabellenverzeichnis}
+%
+% hinzugefügt werden.
+
+%\listoftables
+%\addcontentsline{toc}{chapter}{Tabellenverzeichnis}
+
+
+
+
+% \rmfamily % Auskommentieren für eine Schrift mit serifen / Kommentieren für eine serifenlose Schrift
+\normalsize
+
+
+%_________input von ausgelagerten chapters
+
+\input{chapters/chapter1}
+\cleardoublepage
+
+\input{chapters/chapter2}
+\cleardoublepage
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+% Literaturverzeichnis         %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Zum Schluss kann noch das Literaturvzerzeichnis hinzugefügt
+% werden.
+%
+% Damit es ebenfalls im Inhaltsverzeichnis gefunden werden kann,
+% sollte das Literaturverzeichnis mit dem Makro
+%
+%    \addcontentsline{toc}{chapter}{Literaturverzeichnis}
+%
+% hinzugefügt werden.
+
+
+\begin{thebibliography}{[MB91a]}
+\addcontentsline{toc}{chapter}{Literaturverzeichnis}
+
+\normalsize
+\sffamily
+
+\setlength{\itemsep}{6pt}
+
+\bibitem[Cd15]{bib:corporateDesign}
+%Universität Konstanz: Corporate Design Manual.
+%Universtät Konstanz, (2015)
+
+\end{thebibliography}
+
+
+%%%% NEU - mit BibTex
+
+\bibliographystyle{alphadin}
+\bibliography{references} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Ende vom Dokument                                     %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

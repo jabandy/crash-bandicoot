@@ -1,0 +1,574 @@
+
+
+\chapter{Introduction}
+\section{"of fish and men"}
+Global Aquaculture is often referred to as "The Blue Revolution", a remarkable solution for the worlds craving hunger of easy available and healthy animal protein. Since the 1980s fish populations all over the world start becoming more and more overexploited and/or collapsed, with an annual 10PROZENT in 1974 up to a concerning 29,9PROZENT in the year 2009 (Citation worldoceanreview). While 50PROZENT of all fish populations are regularly fully exploited, only a mere 10 of all fish populations is moderately used(same citation). Around the year 1995 landings by global capture fisheries
+have leveled off at around 80-90 mio.t. per year, mostly owing to the issue of economical overfishing, rather than ecological overfishing(citation needed). 
+
+While overfishing in general lead to devastating and catastrophic situations in ecosystems all over the world, changing them drastically sometimes even eradicating them entirely, the global demand for seafood still rose.
+
+
+\section{Theory and Hypothesis}
+The following section offers some tentative thoughts on the issue. As the question has, to the best of my knowledge, not explicitly been tackled by academic literature, these thoughts are largely of exploratory nature and necessitate further development. Nevertheless, I formulate two competing hypotheses that plausibly explain the relationship. In this outline, I gloss over definitions and operationalizations of (social) trust and regime type.
+
+One may suppose that autocratic regimes actively attempt to destroy generalized trust as it could aid in alleviating collective action problems possible opposition forces face (Magaloni 2010)\nocite{magaloni2010game}: If individuals generally trust their fellow citizens, they may be more inclined to engage in anti-state behavior of some degree. To keep power and preempt opposition, the regime could foster citizen spy systems (e.g. the Stasi in the GDR), forbid social networks (e.g. Turkey under Erdogan) and restrict the right of assembly. Thus, one could easily suppose:
+
+\begin{center}
+H1a: Individuals in autocratic regimes are less likely to generally trust others
+\end{center}
+
+Just as easily, one can imagine the regime actively fostering trust in certain groups. For example, a regime that favors one ethnicity over another would try to strengthen that groups social cohesion. This corresponds to Putnam's idea of bonding social capital. Moreover, generalized trust may instill a patriotic feeling of loyalty towards the regime (e.g. in a monarchy). Then, the competing hypothesis would be:
+
+\begin{center}
+H1b: Individuals in autocratic regimes are more likely to generally trust others
+\end{center}
+
+Finally, there is one caveat: Citizens that favor (and/or benefit from) the regime, may display more generalized trust. I am going to account for this using interaction terms (e.g. perception of economic situation $x$ autocratic regime).
+
+\section{Data}
+Individual-level survey data will be taken from the WVS-Survey – possibly in longitudinal form. Country-level data is available with the World Bank. Classification into autocratic or democratic regimes will be taken from Geddes et al (2014)\nocite{geddes2014autocratic}.One may suppose that autocratic regimes actively attempt to destroy generalized trust as it could aid in alleviating collective action problems possible opposition forces face (Magaloni 2010)\nocite{magaloni2010game}: If individuals generally trust their fellow citizens, they may be more inclined to engage in anti-state behavior of some degree. To keep power and preempt opposition, the regime could foster citizen spy systems (e.g. the Stasi in the GDR), forbid social networks (e.g. Turkey under Erdogan) and restrict the right of assembly. Thus, one could easily suppose:
+
+\section{Method and Analysis}
+
+As explained above, the proposed model would look as follows:
+
+\begin{center}
+
+$y_i=\alpha+\beta RegimeType_c + X^c + X^i + \epsilon$,
+
+\end{center}
+
+Where $y_i$ is the outcome variable of interest on the individual level: (level of) social trust, $RegimeType_c$ is the independent variable at the country level, $X^c$ is a vector of country-level control variables (e.g. corruption, log of GDP, log of population size), $X^i$ is a vector of individual-level control variables (demographic controls).
+
+As is common in the field of trust research, I plan to fit several multilevel models to the outcome variable of political trust. The levels are: individuals and countries, possibly with a longitudinal hierarchy. Moreover, for robustness tests factor analysis could form a scale (e.g. with the items: trust in neighbors/foreigners/people you first meet). Some salient interaction effects (e.g. economic performance x autocratic regimes) could be added.
+
+However, in order to avoid issues of endogeneity (low generalized trust causing autocratic regimes) and validity (fear of answering honestly in respondents) I also plan to use instrumental variables with a Two Stage Least Squares Regression. These could be: corruption, log. of population density (s. Kim et al 2011)\nocite{kim2011}. Here, I am going to carefully examine possible confounders and relevance. 
+
+
+\section{Paper Outline}
+
+
+\begin{enumerate}
+\item Introduction
+
+\begin{itemize}
+\item Research Gap
+\item Short Summary
+\item Outline
+\end{itemize}
+
+\item Literature Review
+\begin{itemize}
+\item Related Works in Trust Research
+\item Related Works Autocratic Regimes
+\end{itemize}
+
+\item Theory
+\begin{itemize}
+\item Possible causal pathways (s. above)
+\item Illustrative evidence (e.g. Stasi in Germany)
+\end{itemize}
+
+\item Definitions
+\begin{itemize}
+\item From Trust to Generalized Trust
+\item Regime Types
+\end{itemize}
+
+\item Operationalization, Data and Method
+
+\item Analysis
+\begin{itemize}
+\item Logistic Regressions
+\end{itemize}
+
+\item Robustness Test
+\begin{itemize}
+\item Instrumental Variables
+\item OLS Regressions with Scale (or Index)
+\end{itemize}
+\end{enumerate}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+% Abbildung                    %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Auch Abbildungen können wie gewohnt mit der figure Umgebung
+% im Corporate Design der Universität Konstanz erstellt werden.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+% Tabelle                      %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Um eine Tabelle im Corporate Design der Universität Konstanz
+% zu erstellen wird das Paket tabu verwendet. Dadurch ergeben 
+% sich auch kleine Unterschiede beim Erstellen von Tabellen. 
+%
+% Als Umgebung muss tabu anstatt tabular verwendet werden:
+%
+%    \begin{tabu}
+%
+%        ...
+% 
+%    \end{tabu}
+%
+% Die Spalten können direkt im Anschluss definiert werden.
+% 
+%    { X[coef, align, type] X[coef, align, type] ... }
+%
+%    - coef skaliert die Spalten, sollten es mehrere sein
+%    - align ist entweder r, l, c oder j
+%    - type ist entweder p (Standard), m oder b
+%    - Vertikale Linien können mittels | zwischen den Spalten
+%      gezeichnet werden. Dies sollte aus ästehtischen Gründen
+%      jedoch wenn möglich vermieden werden.
+%
+% Danach können wie aus der tabular Umgebung gewohnt die
+% Zeilen definiert werden. Die Spalte wird mit % gewechselt und
+% ein Zeilenumbruch kann mit \\ eingeleitet werden.
+%
+% Möchte man eine horizontale Linie zeichnen, so können nach
+% dem Corporate Design der Universität Konstanz entweder
+%
+%    \unitoprule
+%
+% für eine durchgezogene (dicke) Linie in seeblau oder
+%
+%    \unimidrule
+%
+% eine gestrichelte durchgezogene Linie in seeblau gezeichnet
+% werden.
+%
+% Da die tabu Umgebung sehr mächtig ist, können auch weitere
+% Varianten gezeichnet werden. Dazu sein an die Paketdokumentation
+% verwiesen:
+% 
+%    ftp://ftp.fu-berlin.de/tex/CTAN/macros/latex/contrib/tabu/tabu.pdf
+%
+% Ein ausführliches Beispiel folgt gleich weiter unten.
+%
+% Die Tabelle sollte in einer table Umgebung eingebunden werden, damit
+% sie im Tabellenverzeichnis erscheint. Außerdem kann noch eine Tabellen-
+% überschrift hinzugefügt werden.
+
+%%%%%%%%%%%%%%%%%%%%%%
+% Schriftgröße       %
+%%%%%%%%%%%%%%%%%%%%%%
+
+% Da innerhalb einer Arbeit es meistens mehrere verschiedene Schriftgrößen
+% gibt, steht hier das Makro
+%
+%     \selectfontsize
+%
+% zur Verfügung.
+%
+% Es kann jedoch auch die Latex internen Makros wie \Large, \small, o.ä. 
+% verwendet werden.
+%
+% Dieses Makro besitzt ein unbedingt notwendiges Argument und ein optionales
+% Feld, indem Key-Value Pairs übergeben werden können.
+%
+%     \selectfontsize[<Key Value Pairs>]{<Schriftgröße>}
+%
+% Das Argument hat dabei folgende Bedeutung:
+% 
+%   1. Argument:         Hier wird die neue Schriftgröße angegeben, die verwendet werden
+%                        soll.
+% Die weiteren Formatierungsoptionen werden alle innerhalb des optionalen Argumentes mittels
+% Key-Value Pairs bestimmt.
+%
+% Dabei stehen folgende Optionen zur Verfügung:
+%
+%     baselineskip    Hier wird der baselineskip angegeben, welcher verwendet werden soll
+%                     Mögliche Werte:
+%                         0      Ist dieser 0, dann wird der baselinefaktor verwendet  
+%                         sonst
+%                    Standardwert: 0
+%
+%     baselinefaktor Hier wird der Faktor angegeben, der verwendet wird, um den neuen
+%                    baselineskip zu berechnen.
+%                    Dieser wird nur benutzt, falls der baselineskip 0 beträgt.
+%                    
+%                        baselineskip = baselinefaktor * #1
+%
+%                    Standardwert: 12/10
+%
+%                    Da hier keine Fließkommazahl in der Dezimalschreibweise angegeben werden
+%                    kann, müssen diese als Brüche repräsentiert werden, wie z.b. 12/10 anstatt
+%                    1.2.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% CD Element: Markieren %
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Um einen Text mit Hilfe des Markieren Elements des Corporate Design hervorzuheben,
+% steht das Makro
+%
+%     \markieren
+%
+% zur Verfügung.
+%
+% Dieses Makro besitzt vier unbedingt notwendige Argumente und ein optionales
+% Feld, indem weitere EIgenschaften festgelegt werden könnnen..
+%
+%     \markieren[Optionen per Key-Value Pair]{<Zeile 1>}{<Zeile 2>}{<Zeile 3>}{<Zeile 4>}
+%
+% Die Argumente haben dabei folgende Bedeutung:
+%
+%   1. - 4. Argument:    Hier werden nun die eigentlichen Zeilen übergeben.
+%
+%                        Wichtig dabei ist es, dass die Aufteilung der Zeilen manuell erfolgen muss durch
+%                        die Argumente, da nur somit sichergestellt werden kann, dass bspw. Treppeneffekte
+%                        nicht auftreten und somit der Benutzer alle Freiheiten bei der Aufteilung besitzt.
+%
+%                        Sollten nicht alle Zeilen verwendet werden, dann müssen die hinteren Brackets
+%                        leer gelassen werden, wie beispielsweise bei der Headline
+%
+% Die wichtigen Formatierungsoptionen werden alle innerhalb des optionalen Argumentes mittels
+% Key-Value Pairs bestimmt.
+%
+% Dabei stehen folgende Optionen zur Verfügung:
+%
+%   align                Hier kann angegeben werden, ob das komplette Objekt
+%                        links- oder rechtsbündig angeordent werden soll.
+%                      
+%                        Der Standardwert ist "left" und somit linksbündig.
+%
+%                        Für eine rechtsbündige Anordnung muss hier der Wert "right" hinterlegt werden.
+%
+%   vertical             Hier wird angegeben, ob der Inhalt der Zeilen zentriert werden soll oder
+%                        überall an der gleichen Baseline ausgerichtet werden soll.
+%                       
+%                        Dies kann mittels der Wörter "center" und "base" eingestellt werden.
+%                        Dabei ist "center" als Standardwert festgelegt.
+%
+%                        Der Unterschied besteht darin, dass bei Zeilen die Buchstaben mit einer Tiefe
+%                        enthalten, wie g, p oder q, anders zentriert werden als welche ohne Buchstaben
+%                        mit einer Tiefe.
+%
+%                        Da dies ein wenig Geschmackssache ist, werden hier beide Varianten zur Verfügung
+%                        gestellt, wobei "center" primär verwendet werden soll, und "base" eher wenn
+%                        Buchstaben mit einer Tiefe in den Zeilen enthalten sind.
+
+
+
+%%%%%%%%%%%%%%%%&%%%%%%%%%%%%%%
+% CD Element: Unterstreichung %
+%%%%%%%%%%%%%%%%%&%%%%%%%%%%%%%
+
+% Um einen Text mit Hilfe des Unterstreichen Elements des Corporate Design hervorzuheben,
+% steht das bereits bekannte Makro
+%
+%     \underline
+%
+% zur Verfügung, welches an die Anforderungen des Corporate Designs angepasst wurde.
+%
+% Dieses Makro besitzt ein notwendiges Argument
+%
+%     \underline{1. Argument}
+%
+% Das Argument hat folgende Bedeutung:
+% 
+%   1. Argument: Hier wird der zu unterstreichende Text hinterlegt.
+%
+% Wichtig ist noch zu wissen, dass auch Textbrüche ohne Probleme durchgeführt werden können.
+%
+% Zudem können weitere Formatierungen, wie bold oder italic innerhalb des Argumentes angewendet
+% werden.
+%
+% Die Dicke der unterstrichenen Linie passt sich dabei der aktuell verwendeten Textgröße an.
+
+
+%%%%%%%%%%%%%%%%%%%%%%
+% CD Element: Merken %
+%%%%%%%%%%%%%%%%%%%%%%
+
+% Um einen Text mit Hilfe des Merken Elements des Corporate Design hervorzuheben,
+% steht das Makro
+%
+%     \merken
+%
+% zur Verfügung.
+%
+% Dieses Makro besitzt drei unbedingt notwendige Argumente
+%
+%     \merken{1. Argument}{2. Argument}{3. Argument}
+%
+% Die Argumente haben dabei folgende Bedeutung:
+% 
+%   1. Argument: Hier wird die Breite des kompletten Objektes angegeben. Da das
+%                Merken Objekt quadratisch ist, wird hier sowohl die Breite als auch
+%                die Höhe angegeben.
+%
+%   2. Argument: Hier wird die Subline des Merken Elementes angegeben, die direkt unter der
+%                Zeile mit dem X folgt (siehe auch Corporate Design Manual).
+%
+%   3. Argument: Hier wird der eigentliche Inhalt angegeben. Wichtig hierbei ist es,
+%                dass dieser Inhalt an die untere Kante des Merken Elementes orientiert ist.
+%                Somit entgegen der Subline (2. Argument), welche an die obere Kante abzüglich
+%                der Zeile mit dem X orientiert ist.
+%
+% Hier folgt noch eine grafische Darstellung der Argumente:
+%
+%    |<------- 1. Argument ------->|    
+%
+%    -------------------------------    -
+%    |                           X |    ^
+%    | Subline (2. Argument)       |    |
+%    |                             |    1
+%    |                             |    .
+%    |                             |    A
+%    |                             |    r
+%    |                             |    g
+%    |                             |    u
+%    |                             |    m
+%    |                             |    e
+%    |                             |    n
+%    |                             |    t
+%    |                             |    |
+%    | Inhalt (3. Argument)        |    v
+%    -------------------------------    -
+%
+% Wichtig ist noch zu wissen, dass die Linienstärke und die Größe des X in der rechten oberen Ecke an die
+% Höhe / Breite des Merken Elements dynamisch angepasst ist. 
+
+%%%%%%%%%%%%%%%%%%%%%%
+% CD Element: Block  %
+%%%%%%%%%%%%%%%%%%%%%%
+
+% Mit dem Makro
+%
+%     \cdblock[Optionen per Key-Value Pair]{<Headline>}{<Spalte 1>}{<Spalte 2>}{<Spalte 3>}{<Spalte 4>}{<Spalte 5>}{<Spalte 6>}{<Spalte 7>}{<Spalte 8>}
+%
+% können Block-Elemente für z.B. wisschenschaftliche Inhalte erstellt werden.
+%
+% Dieses Makro besitzt 9 erforderliche Elemente, die bei jedem Aufruf angegeben werden müssen. Dabei 
+% ist es natürlich mögliche Argumente leer zu lassen, falls man diese nicht benötigt. Dies hat jedoch
+% keinen Einfluss auf die Anzahl an Spalten. Diese müssen separat im Optionenargument angegeben werden
+% mittels des Schlüssels columnnum (siehe weiter unten).
+%
+% Die Argumente haben dabei folgende Bedeutung:
+%
+%   1. Argument: Inhalt der Headline
+%   2. Argument: Inhalt der 1. Spalte
+%   3. Argument: Inhalt der 2. Spalte
+%   4. Argument: Inhalt der 3. Spalte
+%   5. Argument: Inhalt der 4. Spalte
+%   6. Argument: Inhalt der 5. Spalte
+%   7. Argument: Inhalt der 6. Spalte
+%   8. Argument: Inhalt der 7. Spalte
+%   9. Argument: Inhalt der 8. Spalte
+%
+%
+% Die wichtigen Formatierungsoptionen werden diesmal alle innerhalb des optionalen Argumentes mittels
+% Key-Value Pairs bestimmt.
+%
+% Dabei stehen folgende Optionen zur Verfügung:
+%
+%     thick          Hier wird die Dicke der Linie bestimmt.
+%                    Die Pfeile werden generell mit der doppelten Dicke gezeichnet!
+%                    Standardwert: \boxlinewidth
+%
+%     color          Hier wird die Farbe der Linie angegeben
+%                    Es sollten nur die folgenden Farben benutzt werden:
+%                        seeblau100
+%                        seeblau65
+%                        seeblau35
+%                        seeblau20
+%                        black
+%                        schwarz60
+%                        schwarz40
+%                        schwarz20
+%                        schwarz10
+%                    Standardwert: seeblau100
+%
+%     width          Hier wird die Breite des Blocks angegeben
+%                    Standardwert: \paperwidth
+%
+%     columnnum      Hier werden die Anzahl an Spalten definiert
+%                    Standardwert: 4
+%
+%     headlinesep    Hier wird der Abstand zwischen der Headline und den Spalten angegeben
+%                    Standardwert: Aktuelle Schriftgröße
+%
+%     columnspace    Hier wird der Abstand zwischen den Spalten angegeben
+%                    Standardwert: Doppelte Schriftgröße
+%
+%     block          Hier kann angegeben werden, ob man einen Rahmen um diesen Block haben möchte
+%                    Mögliche Werte: true, false
+%                    Standardwert: false
+%
+%     inner          Hier kann angegeben werden, ob zwischen den Spalten Trennlinien haben möchte
+%                    Mögliche Werte:
+%                        false    keine Trennlinien
+%                        short    Trennlinien, die so lange sind, wie der längste Nachbar (entweder der
+%                                 linke oder rechte Nachbar
+%                        long     Trennlinien, die bis nach ganz unten gehen. Sie sind also so lang
+%                                 wie die längste Spalte
+%                    Standardwert: false
+%
+%     inner1,        Hier kann für jeden Zwischenraum der Spalte exakt angegeben werden, ob Trennlinien
+%     inner2,        existieren sollen und falls ja, wie lang sie sein sollen. Diese Werte werden jedoch
+%     inner3,        nur berücksichtigt, wenn inner=false ist. Ansonsten ist inner stärker.
+%     inner4,        Mögliche Werte:
+%     inner5,           false    keine Trennlinien
+%     inner6,           short    Trennlinien, die so lange sind, wie der längste Nachbar (entweder der
+%     inner7,                    linke oder rechte Nachbar
+%                       long     Trennlinien, die bis nach ganz unten gehen. Sie sind also so lang
+%                                wie die längste Spalte
+%                    Standardwert: false
+%
+%     outerleft,     Hier kann angegeben werden, ob links (rechts) der ersten Spalte eine Trennlinie existieren soll.
+%     outerright     Mögliche Werte
+%                        false    keine Trennlinien
+%                        short    Trennlinien, die so lange sind, wie der direkte Nachbar (bei outerleft die 1. Spalte
+%                                 und bei outerright die letzte Spalte
+%                        long     Trennlinien, die bis nach ganz unten gehen. Sie sind also so lang
+%                                 wie die längste Spalte
+%                        verylong Trennlinie geht von oben nach unten, sowie ein halber columnspace nach innen.
+%                    Standardwert: false
+%
+%     outertop,      Hier kann angegeben werden, ob oberhalb (unterhalb) des Blocks eine Trennlinie, oder ein Pfeil existieren soll.
+%     outerbottom    Mögliche Werte
+%                        false    keine Trennlinien
+%                        long     Trennlinien, die von links nach rechts geht
+%                        verylong Trennlinie, die von links nach rechts geht, sowie ein halber columnspace nach oben (unten).
+%                        arrow    Pfeil, der aus der Trenlinie verylong besteht und in der Mitte einen Pfeil nach oben (unten)
+%                                 besitzt.
+%                    Standardwert: false
+%
+%     arrowtop1left, Hier kann angegeben werden, ob zwei Spalten oberhalb des Blocks mittels eines Doppelpfeils verbunden werden
+%     arrowtop1right sollen. Da es maximal 8 Spalten sind, können auch nur maximal 4 Paare bestimmt werden.
+%     arrowtop2left  Ein Paar besteht somit aus einer linken und einer rechten Spalte.
+%     arrowtop2right Mögliche Werte:
+%     arrowtop3left      0   Keine Auswahl
+%     arrowtop3right     1-8 Auswahl einer Spalte von 1 bis 8
+%     arrowtop4left  Standardwert: 0
+%     arrowtop4right Sollte der linke Wert nicht kleiner als der rechte Wert sein, so werden keine Pfeile gezeichnet. Das gleiche
+%                    gilt für Werte, die außerhalb des Bereichs liegen.
+% 
+%
+% Wichtig ist noch zu wissen, wie die Breite letztendlich berechnet wird:
+% Da es auch links und rechts der Spalten Trennlinien oder Pfeile geben kann, ist links der 1. und rechts der
+% letzten Spalte ebenfalls ein columnspace vorgesehen.
+% Somit wird die Spaltenbreite wie folgt berechnet
+%
+%     blockcolumnwidth = (width - (columnspace * (columnnum + 1))) / columnnum
+%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% CD Element: Linie (mit optionalen Pfeilen) %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Mit dem Makro
+%
+%     \cdline[Optionen per Key-Value Pair]{<Länge der Linie>}
+%
+% kann eine Linie mit einer bestimmten Länge erstellt werden.
+%
+% Dieses Makro besitzt 1 erforderliches Element, welches bei jedem Aufruf mit angegeben
+% werden muss.
+%
+% Das Argument hat dabei folgende Bedeutung.
+%
+%   1. Argument: Länge der erzeugten Linie
+%
+%
+% Die wichtigen Formatierungsoptionen werden alle innerhalb des optionalen Argumentes mittels
+% Key-Value Pairs bestimmt.
+%
+% Dabei stehen folgende Optionen zur Verfügung:
+%
+%     thick          Hier wird die Dicke der Linie bestimmt
+%                    Standardwert: \boxlinewidth
+%
+%     mode           Hier wird angegeben, ob die Linie horizontal oder vertikal ausgerichtet werden soll
+%                    Mögliche Werte
+%                        horizontal
+%                        vertical
+%                    Standardwert: horizontal
+%
+%     color          Hier wird die Farbe der Linie angegeben
+%                    Es sollten nur die folgenden Farben benutzt werden:
+%                        seeblau100
+%                        seeblau65
+%                        seeblau35
+%                        seeblau20
+%                        black
+%                        schwarz60
+%                        schwarz40
+%                        schwarz20
+%                        schwarz10
+%                    Standardwert: seeblau100
+%
+%     arrowleft      Hier wird angegeben, die Linie am linken (vertical: oberen) Ende mit einem Pfeil enden soll
+%                    Mögliche Werte:
+%                        true
+%                        false
+%                    Standardwert: false
+%
+%     arrowright     Hier wird angegeben, die Linie am rechten (vertical: unteren) Ende mit einem Pfeil enden soll
+%                    Mögliche Werte:
+%                        true
+%                        false
+%                    Standardwert: false
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% CD Element: Klammer (mit optionalen Pfeilen) %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Mit dem Makro
+%
+%     \cdbracket[Optionen per Key-Value Pair]{<Breite des Klammer>}{<Höhe des Klammer>}
+%
+% kann eine Klammer mit einer bestimmten Breite und Höhe gezeichnet werden.
+%
+% Dieses Makro besitzt 2 erforderliche Elemente, welche bei jedem Aufruf mit angegeben
+% werden müssen.
+%
+% Die Argumente haben dabei folgende Bedeutung.
+%
+%   1. Argument: Breite der erzeugten Klammer
+%   2. Argument: Höhe der erzeugten Klammer
+%
+%
+% Die wichtigen Formatierungsoptionen werden alle innerhalb des optionalen Argumentes mittels
+% Key-Value Pairs bestimmt.
+%
+% Dabei stehen folgende Optionen zur Verfügung:
+%
+%     thick          Hier wird die Dicke der Linien bestimmt
+%                    Standardwert: \boxlinewidth
+%
+%     mode           Hier wird die Ausrichtung der Klammer angegeben
+%                    Mögliche Werte
+%                        left    linke Klammer
+%                        top     obere Klammer
+%                        right   rechte Klammer
+%                        bottom  untere Klammer
+%                    Standardwert: left
+%
+%     color          Hier wird die Farbe der Linie angegeben
+%                    Es sollten nur die folgenden Farben benutzt werden:
+%                        seeblau100
+%                        seeblau65
+%                        seeblau35
+%                        seeblau20
+%                        black
+%                        schwarz60
+%                        schwarz40
+%                        schwarz20
+%                        schwarz10
+%                    Standardwert: seeblau100
+%
+%     arrowleft      Hier wird angegeben, ob die Klammer am linken (oberen) Ende mit einem Pfeil enden soll
+%                    Mögliche Werte:
+%      
